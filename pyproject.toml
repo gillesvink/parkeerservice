@@ -1,0 +1,97 @@
+[build-system]
+requires = ["maturin>=1.9,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "parkeerservice"
+requires-python = ">=3.9"
+classifiers = [
+    'License :: OSI Approved :: European Union Public Licence 1.2 (EUPL 1.2)',
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: MacOS",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.9',
+    'Programming Language :: Python :: 3.10',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Programming Language :: Python :: 3.14',
+]
+readme = "README.md"
+license = "EUPL-1.2"
+authors = [{ name = "Gilles Vink", email = "gillesvink@noreply.codeberg.org" }]
+maintainers = [
+    { name = "Gilles Vink", email = "gillesvink@noreply.codeberg.org" },
+]
+description = "Bindings to the parkeerservice used in several cities in the Netherlands."
+dynamic = ["version"]
+dependencies = []
+
+
+[project.urls]
+Homepage = "https://codeberg.org/gillesvink/parkeerservice-rs"
+"Bug Tracker" = "https://codeberg.org/gillesvink/parkeerservice-rs/issues"
+Changelog = "https://codeberg.org/gillesvink/parkeerservice-rs/src/branch/main/CHANGELOG.md"
+
+[tool.maturin]
+features = ["pyo3/extension-module", "python-bindings"]
+manifest-path = "lib/Cargo.toml"
+
+[tool.uv]
+cache-keys = [
+    { file = "pyproject.toml" },
+    { file = "**/Cargo.toml" },
+    { file = "**/*.rs" },
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py37"
+show-fixes = true
+
+[tool.ruff.lint]
+select = [
+    "A",
+    "B",
+    "BLE",
+    "C4",
+    "EM",
+    "ERA",
+    "F",
+    "FA",
+    "FIX",
+    "G",
+    "I",
+    "ICN",
+    "INP",
+    "ISC",
+    "N",
+    "NPY",
+    "PERF",
+    "PGH",
+    "PIE",
+    "PL",
+    "PT",
+    "PTH",
+    "PYI",
+    "Q",
+    "RET",
+    "RSE",
+    "RUF",
+    "SIM",
+    "SLF",
+    "SLOT",
+    "T20",
+    "TCH",
+    "TD",
+    "TID",
+    "UP",
+    "W",
+    "YTT",
+]
+
+ignore = ["PYI021", "W0613"]

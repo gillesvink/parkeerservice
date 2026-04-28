@@ -1,0 +1,13 @@
+[package]
+name = "parkeerservice-cli"
+description = "CLI bindings to the parkeerservice used in various cities in the Netherlands."
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+parkeerservice = {path = "../lib"}
+clap = { version = "4.5.51", features = ["derive"]}
+tracing-subscriber = {version = "0.3.20"}
+tokio = { version = "1.48.0", features = ["macros"]}
+log = "0.4.28"
+chrono = "0.4.42"

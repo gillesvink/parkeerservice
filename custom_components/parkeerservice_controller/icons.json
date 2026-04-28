@@ -1,0 +1,6 @@
+{
+  "services": {
+    "turn_on": {"service": "mdi:lightbulb-on"},
+    "turn_off": {"service": "mdi:lightbulb-off"}
+  }
+}
